@@ -27,7 +27,7 @@ $breakpoints-down: (
 }
 
 @mixin breakpoint-between($from, $to) {
-  @media (min-width: map-get($breakpoints-down, $from) or $from) and (max-width: map-get($breakpoints-up, $to ) or $to) {
+  @media (min-width: map-get($breakpoints-down, $from)) and (max-width: map-get($breakpoints-up, $to )) {
     @content;
   }
 }

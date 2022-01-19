@@ -2,10 +2,10 @@ import React, { Fragment } from "react";
 
 export default function Country({ country }) {
   const { flag, name, population, region, capital } = country;
-  console.log(country);
+  //   console.log(country);
   return (
     <Fragment>
-      <div className={"card"} style={{ width: "18rem" }}>
+      <div className={"card"}>
         <img className={"card-img-top"} src={flag} alt={"Country flag"}></img>
         <div className={"card-body"}>
           <h5 className="card-title mb-3">{name}</h5>

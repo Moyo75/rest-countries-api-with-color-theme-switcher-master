@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function SearchCountries() {
+  // const [name, setName] = useState();
   return (
-    <div>
+    <div className="input-container">
       <ion-icon name={"search-outline"}></ion-icon>
-      <input type="search" placeholder="Search a country..." />
+      <input type="search" placeholder="Search for a country..." />
     </div>
   );
 }

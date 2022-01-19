@@ -1,0 +1,27 @@
+.header {
+  border-bottom: 3px solid #eaeaea;
+  .navbar {
+    max-width: 1360px;
+    margin: 0 auto;
+    height: 85px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 0;
+    }
+
+    .dark_mode {
+      ion-icon {
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 16px;
+        margin-left: 10px;
+        margin-bottom: 0px;
+        font-weight: 800;
+      }
+    }
+  }
+}
