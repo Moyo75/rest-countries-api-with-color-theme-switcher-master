@@ -2,20 +2,19 @@ import React, { Fragment } from "react";
 
 export default function Country({ country }) {
   const { flag, name, population, region, capital } = country;
-  //   console.log(country);
   return (
     <Fragment>
-      <div className={"card"}>
-        <img className={"card-img-top"} src={flag} alt={"Country flag"}></img>
-        <div className={"card-body"}>
-          <h5 className="card-title mb-3">{name}</h5>
-          <p className={"card-text"}>
+      <div className={"country"}>
+        <img className={"country_flag"} src={flag} alt={"Country flag"}></img>
+        <div className={"country_details"}>
+          <h5 className={"country_name"}>{name}</h5>
+          <p className={"country_text"}>
             Population: <span>{population}</span>
           </p>
-          <p className={"card-text"}>
+          <p className={"country_text"}>
             Region: <span>{region}</span>
           </p>
-          <p className={"card-text"}>
+          <p className={"country_text"}>
             Capital: <span>{capital}</span>
           </p>
         </div>

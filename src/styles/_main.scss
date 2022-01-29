@@ -1,5 +1,5 @@
 .main {
-  background-color: $veryLightGray;
+  // background-color: $veryLightGray;
   padding-top: 45px;
   padding-right: 90px;
   padding-left: 90px;
@@ -67,4 +67,43 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 4rem;
+}
+
+.country {
+  width: 287px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: 0px 2px 11px #c2c1c140;
+
+  img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 190px;
+  }
+
+  .country_details {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 45px;
+  }
+
+  .country_name {
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .country_text {
+    font-weight: 600;
+
+    span {
+      font-weight: normal;
+    }
+  }
 }

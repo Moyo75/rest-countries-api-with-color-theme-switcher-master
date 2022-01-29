@@ -13,27 +13,49 @@ const url = "https://restcountries.com/";
 function App() {
   const [countries, setCountries] = useState([]);
   const [endPoint, setEndPoint] = useState("v2/all");
+  const [countryInput, setCountryInput] = useState("");
 
+  // Try and catch...
   useEffect(() => {
     async function getCountries() {
-      const response = await fetch(`${url}${endPoint}`).then((data) =>
-        data.json()
-      );
-      //console.log(response);
+      const response = await _fetch(`${url}${endPoint}`);
+      // console.log(response);
       setCountries(response);
     }
     getCountries();
-  }, [endPoint]);
+  }, [endPoint, countryInput]);
+
+  async function _fetch(request) {
+    const fetchResult = await fetch(request);
+    // console.log(fetchResult);
+
+    if (fetchResult.ok) {
+      const result = await fetchResult.json();
+      return result;
+    }
+
+    const errorMessage = {
+      type: "Error",
+      message: fetchResult.message || "Something went wrong",
+      code: fetchResult.code || "",
+      data: fetchResult.data || "",
+    };
+
+    const error = new Error();
+    error.info = errorMessage;
+
+    return error;
+  }
 
   return (
     <div>
       <Header />
       <div className="main">
         <div className="search-select">
-          <SearchCountries />
+          <SearchCountries setCountryInput={setCountryInput} />
           <SelectRegion setEndPoint={setEndPoint} />
         </div>
-        <Countries countries={countries} />
+        <Countries countryInput={countryInput} countries={countries} />
       </div>
     </div>
   );
