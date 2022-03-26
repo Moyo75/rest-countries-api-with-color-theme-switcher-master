@@ -1,6 +1,5 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect } from "react";
 
-import Header from "./Header";
 import SearchCountries from "./SearchCountries";
 import Countries from "./Countries";
 import SelectRegion from "./SelectRegion";
@@ -10,10 +9,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const url = "https://restcountries.com/v2/all";
 
-function App() {
+function Home(props) {
   const [countries, setCountries] = useState([]);
   const [region, setRegion] = useState("");
   const [countryInput, setCountryInput] = useState("");
+  const { dark } = props;
 
   useEffect(() => {
     async function getCountries() {
@@ -45,21 +45,19 @@ function App() {
   }
 
   return (
-    <Fragment>
-      <Header />
-      <div className="main">
-        <div className="search-select">
-          <SearchCountries setCountryInput={setCountryInput} />
-          <SelectRegion setRegion={setRegion} />
-        </div>
-        <Countries
-          countryInput={countryInput}
-          countries={countries}
-          region={region}
-        />
+    <div className={`${dark ? "very_dark_mode" : ""} main`}>
+      <div className="search-select">
+        <SearchCountries setCountryInput={setCountryInput} dark={dark} />
+        <SelectRegion setRegion={setRegion} dark={dark} />
       </div>
-    </Fragment>
+      <Countries
+        countryInput={countryInput}
+        countries={countries}
+        region={region}
+        dark={dark}
+      />
+    </div>
   );
 }
 
-export default App;
+export default Home;

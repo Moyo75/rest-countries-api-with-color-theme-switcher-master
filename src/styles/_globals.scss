@@ -2,6 +2,7 @@
 
 html {
   box-sizing: inherit;
+  height: 100%;
 }
 
 *,
@@ -15,8 +16,43 @@ html {
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   background-color: $veryLightGray !important;
   font-family: "nunito", "sans-serif" !important;
+}
+
+#root {
+  height: 100%;
+}
+
+.appComp {
+  height: 100%;
+}
+
+.dark_mode {
+  color: $white !important;
+  background-color: $darkBlue !important;
+  border-bottom: 3px solid $darkBlue !important;
+  box-shadow: 0px 2px 0px $darkBlue !important;
+}
+
+.dark_mode_input {
+  color: $white;
+  background-color: $darkBlue !important;
+  box-shadow: none !important;
+
+  input {
+    &::placeholder {
+      color: $white;
+    }
+    color: $white;
+    background-color: $darkBlue !important;
+  }
+}
+
+.very_dark_mode {
+  color: $white;
+  background-color: $veryDarkBlue !important;
 }
 
 h1,

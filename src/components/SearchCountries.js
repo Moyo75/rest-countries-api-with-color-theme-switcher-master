@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function SearchCountries({ setCountryInput }) {
+export default function SearchCountries({ setCountryInput, dark }) {
   return (
-    <div className="input-container">
+    <div className={`${dark ? "dark_mode_input" : ""} input-container`}>
       <ion-icon name={"search-outline"}></ion-icon>
       <input
         type="search"

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function SelectRegion({ setRegion }) {
+export default function SelectRegion({ setRegion, dark }) {
   return (
     <select
-      className="select"
+      className={`${dark ? "dark_mode_input" : ""} select`}
       defaultValue={"DEFAULT"}
       onChange={(event) => setRegion(event.target.value)}
     >

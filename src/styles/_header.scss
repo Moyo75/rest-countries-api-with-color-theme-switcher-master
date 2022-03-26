@@ -1,18 +1,51 @@
 .header {
   background-color: $white;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+
   border-bottom: 3px solid #eaeaea;
+  -webkit-transition: border-bottom-color 100ms linear;
+  -ms-transition: border-bottom-color 100ms linear;
+  transition: border-bottom-color 100ms linear;
+
   .navbar {
     max-width: 1360px;
     margin: 0 auto;
     height: 85px;
 
+    @include breakpoint-down(499px) {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+
+    @include breakpoint-between(500px, 800px) {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    @include breakpoint-between(801px, 1400px) {
+      margin-left: 45px;
+      margin-right: 45px;
+    }
+
     h2 {
       font-size: 24px;
       font-weight: 800;
       margin-bottom: 0;
+
+      @include breakpoint-down(675px) {
+        font-size: 16px;
+      }
+
+      @include breakpoint-up(675px) {
+        font-size: 20px;
+      }
     }
 
-    .dark_mode {
+    .dark__con {
+      cursor: pointer;
+
       ion-icon {
         font-weight: bold;
       }
@@ -20,8 +53,15 @@
       p {
         font-size: 16px;
         margin-left: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 0px !important;
         font-weight: 800;
+
+        @include breakpoint-down(675px) {
+          font-size: 12px;
+        }
+        @include breakpoint-up(675px) {
+          font-size: 14px;
+        }
       }
     }
   }

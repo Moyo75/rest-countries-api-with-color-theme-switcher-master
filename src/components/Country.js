@@ -1,30 +1,28 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function Country({ country }) {
+export default function Country({ country, dark }) {
   const { flag, name, population, region, capital } = country;
 
-  const navigate = useNavigate();
-
-  const handleClick = (data) => {
-    navigate("/country", { state: data });
-  };
-
   return (
-    <div className={"country"} onClick={() => handleClick(country)}>
+    <Link
+      className={`${dark ? "dark_mode" : ""} country`}
+      to={`/${name.split(" ").join("-")}`}
+      state={{ country }}
+    >
       <img className={"country_flag"} src={flag} alt={"Country flag"}></img>
-      <div className={"country_details"}>
+      <div className={` country_details`}>
         <h5 className={"country_name"}>{name}</h5>
         <p className={"country_text"}>
           Population: <span>{population.toLocaleString()}</span>
         </p>
         <p className={"country_text"}>
-          Region: <span>{region}</span>
+          Region: <span>{region ? region : "None"}</span>
         </p>
         <p className={"country_text"}>
-          Capital: <span>{capital}</span>
+          Capital: <span>{capital ? capital : "None"}</span>
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
