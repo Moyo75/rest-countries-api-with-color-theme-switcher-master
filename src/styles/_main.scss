@@ -238,11 +238,14 @@
   padding-top: 78px;
   padding-left: 84px;
   padding-right: 84px;
-  height: 100%;
 
   -webkit-transition: background-color 100ms linear;
   -ms-transition: background-color 100ms linear;
   transition: background-color 100ms linear;
+
+  @include breakpoint-up(1200) {
+    height: 100%;
+  }
 
   @include breakpoint-down(650px) {
     margin-left: 0px;
@@ -293,7 +296,6 @@
   figcaption {
     @include breakpoint-up(1400px) {
       width: 640px;
-      // width: 350px;
     }
 
     h2 {
